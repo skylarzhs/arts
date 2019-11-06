@@ -13,5 +13,5 @@
 
 ### 数据结构
 1. [链表](dataStructure/LinkedList)
-    [单链表](dataStructure/LinkedList/SingleLinkedList.php)
-    [双链表](dataStructure/LinkedList/DoubleLinkedList.php)
+    - [单链表](dataStructure/LinkedList/SingleLinkedList.php)
+    - [双链表](dataStructure/LinkedList/DoubleLinkedList.php)
