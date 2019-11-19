@@ -1,0 +1,24 @@
+{
+    "name": "skylar/web-blog",
+    "require": {
+        "phpunit/phpunit": "^7.2"
+    },
+    "authors": [
+        {
+            "name": "skylar",
+            "email": "skylar.zhes@qq.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "DataStructure\\": "dataStructure/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

@@ -6,7 +6,7 @@
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/cocoapods/l/AFNetworking.svg" alt="License"></a>
 </p>
 
-> 记录一些学习笔记。
+> 记录一些学习笔记。[]
 > 收藏请点star，如发现有错误欢迎PR
 
 #### 数据结构和算法
