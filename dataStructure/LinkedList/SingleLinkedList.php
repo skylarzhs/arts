@@ -1,5 +1,6 @@
 <?php
 
+namespace DataStructure\LinkedList;
 /**
  * 单向链表
  */

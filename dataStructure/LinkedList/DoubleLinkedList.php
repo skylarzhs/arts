@@ -1,4 +1,6 @@
 <?php
+namespace DataStructure\LinkedList;
+
 /**
  * 双向链表
  */
