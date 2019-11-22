@@ -53,7 +53,7 @@ class DoubleLinkedList
      */
     public function set(int $index, $val)
     {
-        $i = 1;
+        $i = 0;
         $node = $this->getHead();
         while ($node->Next !== NULL && $i <= $index) {
             $node = $node->Next;
@@ -70,7 +70,7 @@ class DoubleLinkedList
      */
     public function get(int $index)
     {
-        $i = 1;
+        $i = 0;
         $node = $this->getHead();
         while ($node->Next !== NULL && $i <= $index) {
             $node = $node->Next;
@@ -90,7 +90,7 @@ class DoubleLinkedList
         if ($index < 0 || $index > $this->getLen()) {
             return false;
         }
-        $i = 1;
+        $i = 0;
         $node = $this->getHead();
 
         while ($node->Next !== NULL && $i < $index) {
@@ -111,10 +111,10 @@ class DoubleLinkedList
      */
     public function delete(int $index)
     {
-        if ($index <= 0 || $index > $this->getLen()) {
+        if ($index < 0 || $index > $this->getLen()) {
             return false;
         }
-        $i = 1;
+        $i = 0;
         $node = $this->getHead();
         while ($node->Next !== NULL) {
             if ($i == $index) break;
