@@ -16,24 +16,6 @@ class SingleLinkedListTest extends TestCase
         parent::setUp();
     }
 
-    public function testInsert()
-    {
-        $this->linkedlist->insert('skylar');
-        $this->assertEquals('skylar', $this->linkedlist->get(1));
-    }
-
-    public function testSet()
-    {
-        $this->linkedlist->set(1, 'one');
-        $this->assertEquals('one', $this->linkedlist->get(1));
-    }
-
-    public function testDelete()
-    {
-        $this->linkedlist->delete(1);
-        $this->assertEmpty($this->linkedlist->getLen());
-    }
-
     public function testEmpty()
     {
         $this->assertEmpty($this->linkedlist->getLen());
@@ -43,21 +25,38 @@ class SingleLinkedListTest extends TestCase
     /**
      * @depends testEmpty
      */
-    public function testInsert2($linkedlist)
+    public function testInsert($linkedlist)
     {
-        $linkedlist->insert('notempty');
+        $linkedlist->insert('skylar');
         $this->assertNotEmpty($linkedlist->getLen());
-        $this->assertEquals('notempty', $linkedlist->get(1));
+        $this->assertEquals('skylar', $linkedlist->get(0));
+        $linkedlist->insert('skylar2');
+        $this->assertEquals(2, $linkedlist->getLen());
+        $this->assertEquals('skylar2', $linkedlist->get(0));
+        $this->assertEquals('skylar', $linkedlist->get(1));
+        $linkedlist->insert('skylar3', 2);
+        $this->assertEquals(3, $linkedlist->getLen());
+        $this->assertEquals('skylar3', $linkedlist->get(2));
         return $linkedlist;
     }
 
     /**
-     * @depends testInsert2
+     * @depends testInsert
      */
-    public function testDelete2($linkedlist)
+    public function testSet($linkedlist)
     {
-        $this->assertEquals(true, $linkedlist->delete(1));
-        $this->assertEmpty($linkedlist->getLen());
-        $this->assertEquals(null, $linkedlist->get(1));
+        $this->assertEquals(true, $linkedlist->set(1, 'jane'));
+        $this->assertEquals('jane', $linkedlist->get(1));
+        $this->assertEquals(3, $linkedlist->getLen());
+    }
+
+    /**
+     * @depends testInsert
+     */
+    public function testDelete($linkedlist)
+    {
+        $this->assertEquals(true, $linkedlist->delete(0));
+        $this->assertEquals(2, $linkedlist->getLen());
+        $this->assertEquals('jane', $linkedlist->get(0));
     }
 }

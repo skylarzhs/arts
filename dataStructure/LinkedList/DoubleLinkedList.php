@@ -1,4 +1,5 @@
 <?php
+
 namespace DataStructure\LinkedList;
 
 /**
@@ -97,9 +98,9 @@ class DoubleLinkedList
             $i++;
         }
         $newNode = new Node($val, $node->Next, $node);
-        if($node->Next !== NULL) $node->Next->Prev = $newNode;
+        if ($node->Next !== NULL) $node->Next->Prev = $newNode;
         $node->Next = $newNode;
-        
+
         $this->len++;
         return true;
     }
