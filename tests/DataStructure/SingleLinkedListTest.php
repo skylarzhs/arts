@@ -43,6 +43,17 @@ class SingleLinkedListTest extends TestCase
     /**
      * @depends testInsert
      */
+    public function testGetNode($linkedlist){
+        $node = $linkedlist->getNode(1);
+        $this->assertEquals('skylar',$node->Data);
+
+        $node = $linkedlist->getNode(2);
+        $this->assertEquals('skylar3',$node->Data);
+    }
+    
+    /**
+     * @depends testInsert
+     */
     public function testSet($linkedlist)
     {
         $this->assertEquals(true, $linkedlist->set(1, 'jane'));

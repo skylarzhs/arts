@@ -83,6 +83,23 @@ class SingleLinkedList
     }
 
     /**
+     * 获取指定节点
+     */
+    public function getNode(int $index = 0)
+    {
+        if ($index < 0 || $index > $this->getLen()) {
+            return null;
+        }
+        $i = 0;
+        $node = $this->getHead();
+        while ($node->Next !== NULL && $i < $index) {
+            $node = $node->Next;
+            $i++;
+        }
+        return $node->Next;
+    }
+
+    /**
      * 在某位置插入节点
      * @param mixed $val
      * @param int index
