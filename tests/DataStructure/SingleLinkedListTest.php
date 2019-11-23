@@ -27,37 +27,53 @@ class SingleLinkedListTest extends TestCase
      */
     public function testInsert($linkedlist)
     {
-        $linkedlist->insert('skylar');
+        $linkedlist->insert('world');
         $this->assertNotEmpty($linkedlist->getLen());
-        $this->assertEquals('skylar', $linkedlist->get(0));
-        $linkedlist->insert('skylar2');
+        $this->assertEquals('world', $linkedlist->get(0));
+        $linkedlist->insert('Hello');
         $this->assertEquals(2, $linkedlist->getLen());
-        $this->assertEquals('skylar2', $linkedlist->get(0));
-        $this->assertEquals('skylar', $linkedlist->get(1));
-        $linkedlist->insert('skylar3', 2);
+        $this->assertEquals('Hello', $linkedlist->get(0));
+        $this->assertEquals('world', $linkedlist->get(1));
+        $linkedlist->insert('!', 2);
         $this->assertEquals(3, $linkedlist->getLen());
-        $this->assertEquals('skylar3', $linkedlist->get(2));
+        $this->assertEquals('!', $linkedlist->get(2));
         return $linkedlist;
     }
 
     /**
      * @depends testInsert
      */
-    public function testGetNode($linkedlist){
+    public function testGetNode($linkedlist)
+    {
         $node = $linkedlist->getNode(1);
-        $this->assertEquals('skylar',$node->Data);
+        $this->assertEquals('world', $node->Data);
 
         $node = $linkedlist->getNode(2);
-        $this->assertEquals('skylar3',$node->Data);
+        $this->assertEquals('!', $node->Data);
     }
-    
+
+    /**
+     * @depends testInsert
+     */
+    public function testReverse($linkedlist)
+    {
+        $this->assertEquals(3, $linkedlist->getLen());
+        $this->assertEquals(true, $linkedlist->reverse());
+        $this->assertEquals('Hello', $linkedlist->get(2));
+        $this->assertEquals('world', $linkedlist->get(1));
+        $this->assertEquals('!', $linkedlist->get(0));
+    }
     /**
      * @depends testInsert
      */
     public function testSet($linkedlist)
     {
-        $this->assertEquals(true, $linkedlist->set(1, 'jane'));
-        $this->assertEquals('jane', $linkedlist->get(1));
+        $this->assertEquals(true, $linkedlist->set(0, 'Hello'));
+        $this->assertEquals('Hello', $linkedlist->get(0));
+
+        $this->assertEquals(true, $linkedlist->set(1, 'PHP'));
+        $this->assertEquals('PHP', $linkedlist->get(1));
+
         $this->assertEquals(3, $linkedlist->getLen());
     }
 
@@ -68,6 +84,6 @@ class SingleLinkedListTest extends TestCase
     {
         $this->assertEquals(true, $linkedlist->delete(0));
         $this->assertEquals(2, $linkedlist->getLen());
-        $this->assertEquals('jane', $linkedlist->get(0));
+        $this->assertEquals('PHP', $linkedlist->get(0));
     }
 }

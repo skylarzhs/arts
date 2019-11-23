@@ -142,6 +142,23 @@ class SingleLinkedList
         $this->len--;
         return true;
     }
+
+    /**
+     * reverse single linked list
+     */
+    public function reverse()
+    {
+        if ($this->getLen() <= 1) {
+            return true;
+        }
+        $node = $this->getHead();
+        $newNode = null;
+        while ($node = $node->Next) {
+            $newNode = new Node($node->Data, $newNode);
+        }
+        $newNode = $this->setHead($newNode);
+        return $newNode;
+    }
 }
 
 /**
