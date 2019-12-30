@@ -28,7 +28,7 @@ class SingleLinkedListTest extends TestCase
     public function testInsert($linkedlist)
     {
         $linkedlist->insert('world');
-        $this->assertNotEmpty($linkedlist->getLen());
+        $this->assertEquals(1, $linkedlist->getLen());
         $this->assertEquals('world', $linkedlist->get(0));
         $linkedlist->insert('Hello');
         $this->assertEquals(2, $linkedlist->getLen());
@@ -68,6 +68,7 @@ class SingleLinkedListTest extends TestCase
      */
     public function testSet($linkedlist)
     {
+        
         $this->assertEquals(true, $linkedlist->set(0, 'Hello'));
         $this->assertEquals('Hello', $linkedlist->get(0));
 
@@ -82,8 +83,11 @@ class SingleLinkedListTest extends TestCase
      */
     public function testDelete($linkedlist)
     {
-        $this->assertEquals(true, $linkedlist->delete(0));
+        $this->assertEquals(true, $linkedlist->delete(0));//头结点
         $this->assertEquals(2, $linkedlist->getLen());
+        $this->assertEquals('PHP', $linkedlist->get(0));
+        $this->assertEquals(true, $linkedlist->delete(1));//尾结点
+        $this->assertEquals(1, $linkedlist->getLen());
         $this->assertEquals('PHP', $linkedlist->get(0));
     }
 }

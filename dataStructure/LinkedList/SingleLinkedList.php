@@ -55,7 +55,7 @@ class SingleLinkedList
     {
         $i = 0;
         $node = $this->getHead();
-        while ($node->Next !== NULL && $i <= $index) {
+        while ($node->Next !== NULL && $i < $index) {
             $node = $node->Next;
             $i++;
         }
@@ -76,7 +76,9 @@ class SingleLinkedList
         $i = 0;
         $node = $this->getHead();
         while ($node->Next !== NULL && $i <= $index) {
-            $node = $node->Next;
+            if ($i > 0) {
+                $node = $node->Next;
+            }
             $i++;
         }
         return $node->Data;
@@ -96,7 +98,7 @@ class SingleLinkedList
             $node = $node->Next;
             $i++;
         }
-        return $node->Next;
+        return $node;
     }
 
     /**
@@ -112,12 +114,19 @@ class SingleLinkedList
         }
         $i = 0;
         $node = $this->getHead();
-
         while ($node->Next !== NULL && $i < $index) {
             $node = $node->Next;
             $i++;
         }
-        $node->Next = new Node($val, $node->Next);
+        if ($this->getLen() == 0) {
+            $this->setHead(new Node($val, null));
+        } else {
+            if ($index == 0) { //头结点
+                $this->setHead(new Node($val, $node));
+            } else {
+                $node->Next = new Node($val, $node->Next);
+            }
+        }
         $this->len++;
         return true;
     }
@@ -133,12 +142,15 @@ class SingleLinkedList
         }
         $i = 0;
         $node = $this->getHead();
-        while ($node->Next !== NULL) {
-            if ($i == $index) break;
+        while ($node->Next->Next !== NULL && $i <= $index) {
             $node = $node->Next;
             $i++;
         }
-        $node->Next = $node->Next->Next;
+        if ($index == 0) {
+            $this->setHead($node);
+        } else {
+            $node->Next = $node->Next->Next;
+        }
         $this->len--;
         return true;
     }
@@ -152,12 +164,12 @@ class SingleLinkedList
             return true;
         }
         $node = $this->getHead();
-        $newNode = null;
+        $newNode = new Node($node->Data, null);
         while ($node = $node->Next) {
             $newNode = new Node($node->Data, $newNode);
         }
-        $newNode = $this->setHead($newNode);
-        return $newNode;
+        $this->setHead($newNode);
+        return true;
     }
 }
 
