@@ -2,6 +2,8 @@
 
 namespace DataStructure\LinkedList;
 
+use Exception;
+
 /**
  * 单向链表
  */
@@ -21,7 +23,7 @@ class SingleLinkedList
     /**
      * 设置头结点
      */
-    public function setHead(Node $val)
+    public function setHead(SingleNode $val)
     {
         $this->head = $val;
     }
@@ -41,7 +43,7 @@ class SingleLinkedList
 
     public function init()
     {
-        $this->setHead(new Node(NULL, NULL));
+        $this->head = null;
         $this->len = 0;
     }
 
@@ -53,9 +55,17 @@ class SingleLinkedList
      */
     public function set(int $index, $val)
     {
+        if ($index >= $this->getLen()) {
+            throw new Exception('Node does not exist.');
+        }
+
+        if ($index < 0) {
+            throw new Exception('Invalid index value.');
+        }
+
         $i = 0;
         $node = $this->getHead();
-        while ($node->Next !== NULL && $i <= $index) {
+        while ($node->Next !== NULL && $i < $index) {
             $node = $node->Next;
             $i++;
         }
@@ -70,25 +80,8 @@ class SingleLinkedList
      */
     public function get(int $index)
     {
-        if ($index + 1 > $this->getLen()) {
-            return null;
-        }
-        $i = 0;
-        $node = $this->getHead();
-        while ($node->Next !== NULL && $i <= $index) {
-            $node = $node->Next;
-            $i++;
-        }
-        return $node->Data;
-    }
-
-    /**
-     * 获取指定节点
-     */
-    public function getNode(int $index = 0)
-    {
-        if ($index < 0 || $index > $this->getLen()) {
-            return null;
+        if ($index > $this->getLen()) {
+            throw new Exception('Node does not exist.');
         }
         $i = 0;
         $node = $this->getHead();
@@ -96,7 +89,7 @@ class SingleLinkedList
             $node = $node->Next;
             $i++;
         }
-        return $node->Next;
+        return $node->Data;
     }
 
     /**
@@ -108,16 +101,25 @@ class SingleLinkedList
     public function insert($val, int $index = 0)
     {
         if ($index < 0 || $index > $this->getLen()) {
-            return false;
+            throw new Exception('Invalid index value.');
         }
-        $i = 0;
+
+        $i = 1;
         $node = $this->getHead();
+
+        if ($index == 0) {
+            $node = new SingleNode($val, $node);
+            $this->setHead($node);
+            $this->len++;
+            return true;
+        }
 
         while ($node->Next !== NULL && $i < $index) {
             $node = $node->Next;
             $i++;
         }
-        $node->Next = new Node($val, $node->Next);
+
+        $node->Next = new SingleNode($val, $node->Next);
         $this->len++;
         return true;
     }
@@ -128,19 +130,35 @@ class SingleLinkedList
      */
     public function delete(int $index)
     {
-        if ($index < 0 || $index > $this->getLen()) {
-            return false;
+        if ($index <= 0 || $index >= $this->getLen()) {
+            throw new Exception('Invalid index value.');
         }
-        $i = 0;
+        $i = 1;
         $node = $this->getHead();
-        while ($node->Next !== NULL) {
-            if ($i == $index) break;
+        while ($node->Next !== NULL && $i < $index) {
             $node = $node->Next;
             $i++;
         }
         $node->Next = $node->Next->Next;
         $this->len--;
         return true;
+    }
+
+    /**
+     * 获取指定节点
+     */
+    public function getNode(int $index = 0)
+    {
+        if ($index < 0 || $index > $this->getLen()) {
+            throw new Exception('Invalid index value!');
+        }
+        $i = 0;
+        $node = $this->getHead();
+        while ($node->Next !== NULL && $i < $index) {
+            $node = $node->Next;
+            $i++;
+        }
+        return $node;
     }
 
     /**
@@ -152,19 +170,19 @@ class SingleLinkedList
             return true;
         }
         $node = $this->getHead();
-        $newNode = null;
+        $newNode = new SingleNode($node->Data, null);
         while ($node = $node->Next) {
-            $newNode = new Node($node->Data, $newNode);
+            $newNode = new SingleNode($node->Data, $newNode);
         }
         $newNode = $this->setHead($newNode);
-        return $newNode;
+        return true;
     }
 }
 
 /**
  * 节点
  */
-class Node
+class SingleNode
 {
     public $Data;
     public $Next;

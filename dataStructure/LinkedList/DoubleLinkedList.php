@@ -132,7 +132,7 @@ class DoubleLinkedList
 /**
  * 节点
  */
-class Node
+class DoubleNode
 {
     public $Data;
     public $Next;
