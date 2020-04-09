@@ -9,6 +9,9 @@ use \PHPUnit\Framework\TestCase;
 class SingleLinkedListTest extends TestCase
 {
 
+    /**
+     * @covers DataStructure\LinkedList\SingleLinkedList
+     */
     public function testEmpty()
     {
         $linkedlist = new SingleLinkedList();
@@ -18,6 +21,9 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @depends testEmpty
+     * @covers DataStructure\LinkedList\SingleLinkedList
+     * @covers DataStructure\LinkedList\SingleLinkedList
+     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testInsert($linkedlist)
     {
@@ -40,6 +46,7 @@ class SingleLinkedListTest extends TestCase
     /**
      * @depends testInsert
      * @expectedException Exception
+     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testInsertException($linkedlist)
     {
@@ -50,6 +57,7 @@ class SingleLinkedListTest extends TestCase
     /**
      * @depends testInsert
      * @expectedException Exception
+     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testGetNode($linkedlist)
     {
@@ -64,7 +72,8 @@ class SingleLinkedListTest extends TestCase
     }
 
     /**
-     * 
+     * @covers DataStructure\LinkedList\SingleLinkedList
+     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testReverse()
     {
@@ -88,6 +97,7 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @expectedException Exception
+     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testSet()
     {
@@ -109,6 +119,7 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @expectedException Exception
+     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testDelete()
     {
