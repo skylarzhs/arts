@@ -58,11 +58,11 @@ class SingleLinkedList
     public function set(int $index, $val)
     {
         if ($index >= $this->getLen()) {
-            throw new Exception('Node does not exist.');
+            throw new Exception('Node does not exist.', 2);
         }
 
         if ($index < 0) {
-            throw new Exception('Invalid index value.');
+            throw new Exception('Invalid index value.', -1);
         }
 
         $i = 0;
@@ -82,8 +82,12 @@ class SingleLinkedList
      */
     public function get(int $index)
     {
-        if ($index > $this->getLen()) {
-            throw new Exception('Node does not exist.');
+        if ($index < 0) {
+            throw new Exception('Invalid index value.', -1);
+        }
+
+        if ($index >= $this->getLen()) {
+            throw new Exception('Node does not exist.', 2);
         }
         $i = 0;
         $node = $this->getHead();
@@ -132,11 +136,26 @@ class SingleLinkedList
      */
     public function delete(int $index)
     {
-        if ($index <= 0 || $index >= $this->getLen()) {
-            throw new Exception('Invalid index value.');
+        if ($index < 0) {
+            throw new Exception('Invalid index value.', -1);
         }
-        $i = 1;
+
+        if ($index >= $this->getLen()) {
+            throw new Exception('Node does not exist.', 2);
+        }
+
         $node = $this->getHead();
+        if ($index == 0) {
+            if ($this->getLen() == 1) {
+                $this->head = null;
+            } else {
+                $this->setHead($node->Next);
+            }
+            $this->len--;
+            return true;
+        }
+
+        $i = 1;
         while ($node->Next !== NULL && $i < $index) {
             $node = $node->Next;
             $i++;

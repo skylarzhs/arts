@@ -13,14 +13,21 @@ use \PHPUnit\Framework\TestCase;
 class SingleLinkedListTest extends TestCase
 {
 
+    public $linkedlist;
+
+    public function setUp()
+    {
+        $this->linkedlist = new SingleLinkedList();
+        parent::setUp();
+    }
+
     /**
      * 空链表测试
      */
     public function testEmpty()
     {
-        $linkedlist = new SingleLinkedList();
-        $this->assertEmpty($linkedlist->getLen());
-        return $linkedlist;
+        $this->assertEmpty($this->linkedlist->getLen());
+        return $this->linkedlist;
     }
 
     /**
@@ -56,7 +63,6 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @depends testInsert
-     * @expectedException Exception
      */
     public function testGetNode($linkedlist)
     {
@@ -65,9 +71,15 @@ class SingleLinkedListTest extends TestCase
 
         $node = $linkedlist->getNode(2);
         $this->assertEquals('!', $node->Data);
+    }
 
-        $this->getExpectedException($linkedlist->getNode(-1));
-        $this->getExpectedException($linkedlist->getNode(11));
+    /**
+     * @expectedException Exception
+     */
+    public function testGetInvalidNode()
+    {
+        $this->getExpectedException($this->linkedlist->getNode(-1));
+        $this->getExpectedException($this->linkedlist->getNode(11));
     }
 
     /**
@@ -75,74 +87,147 @@ class SingleLinkedListTest extends TestCase
      */
     public function testReverse()
     {
-        $linkedlist = new SingleLinkedList();
-        $linkedlist->insert('A');
-        $this->assertEquals(true, $linkedlist->reverse());
-        $this->assertEquals(1,$linkedlist->getLen());
-        $this->assertEquals('A',$linkedlist->get(0));
+        $this->linkedlist->insert('A');
+        $this->assertEquals(true, $this->linkedlist->reverse());
+        $this->assertEquals(1, $this->linkedlist->getLen());
+        $this->assertEquals('A', $this->linkedlist->get(0));
 
-        $linkedlist->insert('B');
-        $this->assertEquals(true, $linkedlist->reverse());
-        $this->assertEquals('A',$linkedlist->get(0));
-        $this->assertEquals('B',$linkedlist->get(1));
+        $this->linkedlist->insert('B');
+        $this->assertEquals(true, $this->linkedlist->reverse());
+        $this->assertEquals('A', $this->linkedlist->get(0));
+        $this->assertEquals('B', $this->linkedlist->get(1));
 
-        $linkedlist->insert('C');
-        $this->assertEquals(true, $linkedlist->reverse());
-        $this->assertEquals('B', $linkedlist->get(0));
-        $this->assertEquals('A', $linkedlist->get(1));
-        $this->assertEquals('C', $linkedlist->get(2));
+        $this->linkedlist->insert('C');
+        $this->assertEquals(true, $this->linkedlist->reverse());
+        $this->assertEquals('B', $this->linkedlist->get(0));
+        $this->assertEquals('A', $this->linkedlist->get(1));
+        $this->assertEquals('C', $this->linkedlist->get(2));
     }
 
     /**
-     * @expectedException Exception
+     * 
      */
     public function testSet()
     {
-        $linkedlist = new SingleLinkedList();
-        $linkedlist->insert('A');
+        $this->linkedlist->insert('A');
 
-        $this->assertEquals(true, $linkedlist->set(0, 'Hello'));
-        $this->assertEquals('Hello', $linkedlist->get(0));
+        // first node
+        $this->assertEquals(true, $this->linkedlist->set(0, 'Hello'));
+        $this->assertEquals('Hello', $this->linkedlist->get(0));
 
-        $this->assertEquals(true, $linkedlist->set(1, 'PHP'));
-        $this->assertEquals('PHP', $linkedlist->get(1));
+        $this->assertEquals(1, $this->linkedlist->getLen());
 
-        $this->assertEquals(1, $linkedlist->getLen());
-
-        $linkedlist->insert('B');
-        $this->assertEquals(true, $linkedlist->set(1, 'PHP'));
-        $this->assertEquals('PHP', $linkedlist->get(1));
+        $this->linkedlist->insert('B');
+        // last node
+        $this->assertEquals(true, $this->linkedlist->set(1, 'PHP'));
+        $this->assertEquals('PHP', $this->linkedlist->get(1));
     }
 
     /**
      * @expectedException Exception
+     * @expectExceptionCode -1
+     */
+    public function testSetNagativeError()
+    {
+        $this->linkedlist->set(-9, 'disable');
+    }
+
+    /**
+     * @expectedException Exception
+     * @expectExceptionCode 2
+     */
+    public function testSetExceedError()
+    {
+        $this->linkedlist->set(9, 'disable');
+    }
+
+    /**
+     * 
+     */
+    public function testGet()
+    {
+        $this->linkedlist->insert('A');
+
+        $this->assertEquals('A', $this->linkedlist->get(0));
+
+        $this->linkedlist->insert('B');
+
+        $this->assertEquals('B', $this->linkedlist->get(0));
+        $this->assertEquals('A', $this->linkedlist->get(1));
+    }
+
+    /**
+     * @expectedException Exception
+     * @expectExceptionCode -1
+     */
+    public function testGetNagativeError()
+    {
+        $this->linkedlist->get(-9);
+    }
+
+    /**
+     * @expectedException Exception
+     * @expectExceptionCode -1
+     */
+    public function testGetExceedError()
+    {
+        $this->linkedlist->get(99);
+    }
+
+
+    /**
+     *
      */
     public function testDelete()
     {
         // one node
-        $linkedlist = new SingleLinkedList();
-        $linkedlist->insert('A');
-        $this->assertEquals(true, $linkedlist->delete(0));
-        $this->assertEquals(0, $linkedlist->getLen());
+        $this->linkedlist->insert('A');
+        $this->assertEquals(true, $this->linkedlist->delete(0));
+        $this->assertEquals(0, $this->linkedlist->getLen());
 
         //three node
-        $linkedlist->insert('A');
-        $linkedlist->insert('B');
-        $linkedlist->insert('C');
+        $this->linkedlist->insert('A');
+        $this->linkedlist->insert('B');
+        $this->linkedlist->insert('C');
 
         //first node
-        $this->assertEquals(true, $linkedlist->delete(0));
-        $this->assertEquals(2, $linkedlist->getLen());
-        $this->assertEquals('B', $linkedlist->get(0));
+        $this->assertEquals(true, $this->linkedlist->delete(0));
+        $this->assertEquals(2, $this->linkedlist->getLen());
+        $this->assertEquals('B', $this->linkedlist->get(0));
+
+        $this->linkedlist->insert('CC');
+        //middle node
+        $this->assertEquals(true, $this->linkedlist->delete(1));
+        $this->assertEquals(3, $this->linkedlist->getLen());
+        $this->assertEquals('CC', $this->linkedlist->get(0));
+        $this->assertEquals('A', $this->linkedlist->get(1));
 
         //last node
-        $this->assertEquals(true, $linkedlist->delete(1));
-        $this->assertEquals(1, $linkedlist->getLen());
-        $this->assertEquals('B', $linkedlist->get(0));
+        $this->linkedlist->insert('LL');
+        $this->linkedlist->insert('MM');
+        $this->linkedlist->insert('NN');
+        $this->linkedlist->insert('HH');
+        $this->linkedlist->insert('II');
+        $this->assertEquals(true, $this->linkedlist->delete(6));
+        $this->assertEquals(6, $this->linkedlist->getLen());
+        $this->assertEquals('A', $this->linkedlist->get(5));
+    }
 
-        //invalid exception
-        $this->getExpectedException($linkedlist->getNode(-1));
-        $this->getExpectedException($linkedlist->getNode(11));
+    /**
+     * @expectedException Exception
+     * @expectExceptionCode -1
+     */
+    public function testDeleteNagativeError()
+    {
+        $this->linkedlist->delete(-9);
+    }
 
+    /**
+     * @expectedException Exception
+     * @expectExceptionCode -1
+     */
+    public function testDeleteExceedError()
+    {
+        $this->linkedlist->delete(99);
     }
 }

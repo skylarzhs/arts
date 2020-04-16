@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2020-04-16 20:44:12</timestamp>
+  <timestamp>2020-04-16 22:33:47</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>11</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>46.34</totalCrap>
+    <totalCrap>36.07</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -72,9 +72,9 @@
       <methodName>set</methodName>
       <methodSignature>set(int $index, $val)</methodSignature>
       <fullMethod>set(int $index, $val)</fullMethod>
-      <crap>5.51</crap>
+      <crap>5</crap>
       <complexity>5</complexity>
-      <coverage>72.73</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -83,9 +83,9 @@
       <methodName>get</methodName>
       <methodSignature>get(int $index)</methodSignature>
       <fullMethod>get(int $index)</fullMethod>
-      <crap>4.03</crap>
-      <complexity>4</complexity>
-      <coverage>87.5</coverage>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -105,9 +105,9 @@
       <methodName>delete</methodName>
       <methodSignature>delete(int $index)</methodSignature>
       <fullMethod>delete(int $index)</fullMethod>
-      <crap>17.8</crap>
-      <complexity>5</complexity>
-      <coverage>20</coverage>
+      <crap>7.07</crap>
+      <complexity>7</complexity>
+      <coverage>88.89</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
