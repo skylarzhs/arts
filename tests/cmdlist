@@ -1,2 +1,10 @@
 # 测试用例覆盖率
-.\vendor\bin\phpunit --coverage-text=.\tests\code-coverage\singlelinkedlist.txt --whitelist .\dataStructure\LinkedList\SingleLinkedList.php  .\tests\DataStructure\SingleLinkedListTest.php
+.\vendor\bin\phpunit --coverage-crap4j=.\tests\code-coverage\singlelinkedlist\coverage.crap4j --whitelist .\dataStructure\LinkedList\SingleLinkedList.php  .\tests\DataStructure\SingleLinkedListTest.php
+
+ .\vendor\bin\phpunit --coverage-clover=.\tests\code-coverage\singlelinkedlist\coverage.clover --whitelist .\dataStructure\LinkedList\SingleLinkedList.php  .\tests\DataStructure\SingleLinkedListTest.php
+
+.\vendor\bin\phpunit --coverage-text=.\tests\code-coverage\singlelinkedlist\coverage.txt --whitelist .\dataStructure\LinkedList\SingleLinkedList.php  .\tests\DataStructure\SingleLinkedListTest.php
+
+.\vendor\bin\phpunit --coverage-xml=.\tests\code-coverage\singlelinkedlist\xml --whitelist .\dataStructure\LinkedList\SingleLinkedList.php  .\tests\DataStructure\SingleLinkedListTest.php
+
+.\vendor\bin\phpunit --coverage-html=.\tests\code-coverage\singlelinkedlist\html --whitelist .\dataStructure\LinkedList\SingleLinkedList.php  .\tests\DataStructure\SingleLinkedListTest.php

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2020-04-16 20:44:12</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>11</methodCount>
+    <crapMethodCount>0</crapMethodCount>
+    <crapLoad>0</crapLoad>
+    <totalCrap>46.34</totalCrap>
+    <crapMethodPercent>0</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct()</methodSignature>
+      <fullMethod>__construct()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>setHead</methodName>
+      <methodSignature>setHead(SingleNode $val)</methodSignature>
+      <fullMethod>setHead(SingleNode $val)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>getHead</methodName>
+      <methodSignature>getHead()</methodSignature>
+      <fullMethod>getHead()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>getLen</methodName>
+      <methodSignature>getLen()</methodSignature>
+      <fullMethod>getLen()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>init</methodName>
+      <methodSignature>init()</methodSignature>
+      <fullMethod>init()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>set</methodName>
+      <methodSignature>set(int $index, $val)</methodSignature>
+      <fullMethod>set(int $index, $val)</fullMethod>
+      <crap>5.51</crap>
+      <complexity>5</complexity>
+      <coverage>72.73</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>get</methodName>
+      <methodSignature>get(int $index)</methodSignature>
+      <fullMethod>get(int $index)</fullMethod>
+      <crap>4.03</crap>
+      <complexity>4</complexity>
+      <coverage>87.5</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>insert</methodName>
+      <methodSignature>insert($val, int $index = 0)</methodSignature>
+      <fullMethod>insert($val, int $index = 0)</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>delete</methodName>
+      <methodSignature>delete(int $index)</methodSignature>
+      <fullMethod>delete(int $index)</fullMethod>
+      <crap>17.8</crap>
+      <complexity>5</complexity>
+      <coverage>20</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>getNode</methodName>
+      <methodSignature>getNode(int $index = 0)</methodSignature>
+      <fullMethod>getNode(int $index = 0)</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>DataStructure\LinkedList</package>
+      <className>DataStructure\LinkedList\SingleLinkedList</className>
+      <methodName>reverse</methodName>
+      <methodSignature>reverse()</methodSignature>
+      <fullMethod>reverse()</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>

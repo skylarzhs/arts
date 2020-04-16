@@ -6,11 +6,15 @@ use DataStructure\LinkedList\SingleLinkedList;
 
 use \PHPUnit\Framework\TestCase;
 
+
+/**
+ * 单链表测试用例
+ */
 class SingleLinkedListTest extends TestCase
 {
 
     /**
-     * @covers DataStructure\LinkedList\SingleLinkedList
+     * 空链表测试
      */
     public function testEmpty()
     {
@@ -21,9 +25,6 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @depends testEmpty
-     * @covers DataStructure\LinkedList\SingleLinkedList
-     * @covers DataStructure\LinkedList\SingleLinkedList
-     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testInsert($linkedlist)
     {
@@ -46,7 +47,6 @@ class SingleLinkedListTest extends TestCase
     /**
      * @depends testInsert
      * @expectedException Exception
-     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testInsertException($linkedlist)
     {
@@ -57,7 +57,6 @@ class SingleLinkedListTest extends TestCase
     /**
      * @depends testInsert
      * @expectedException Exception
-     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testGetNode($linkedlist)
     {
@@ -72,8 +71,7 @@ class SingleLinkedListTest extends TestCase
     }
 
     /**
-     * @covers DataStructure\LinkedList\SingleLinkedList
-     * @covers DataStructure\LinkedList\SingleLinkedList
+     * 单链表反转
      */
     public function testReverse()
     {
@@ -97,7 +95,6 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @expectedException Exception
-     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testSet()
     {
@@ -119,7 +116,6 @@ class SingleLinkedListTest extends TestCase
 
     /**
      * @expectedException Exception
-     * @covers DataStructure\LinkedList\SingleLinkedList
      */
     public function testDelete()
     {

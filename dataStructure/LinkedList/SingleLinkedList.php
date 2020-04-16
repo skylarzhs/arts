@@ -4,6 +4,8 @@ namespace DataStructure\LinkedList;
 
 use Exception;
 
+use DataStructure\LinkedList\SingleNode;
+
 /**
  * 单向链表
  */
@@ -23,7 +25,7 @@ class SingleLinkedList
     /**
      * 设置头结点
      */
-    public function setHead(SingleNode $val)
+    private function setHead(SingleNode $val)
     {
         $this->head = $val;
     }
@@ -31,7 +33,7 @@ class SingleLinkedList
     /**
      * 获取头结点
      */
-    public function getHead()
+    private function getHead()
     {
         return $this->head;
     }
@@ -41,7 +43,7 @@ class SingleLinkedList
         return $this->len;
     }
 
-    public function init()
+    private function init()
     {
         $this->head = null;
         $this->len = 0;
@@ -176,35 +178,5 @@ class SingleLinkedList
         }
         $newNode = $this->setHead($newNode);
         return true;
-    }
-}
-
-/**
- * 节点
- */
-class SingleNode
-{
-    public $Data;
-    public $Next;
-
-    public function __construct($data, $next)
-    {
-        $this->Data = $data;
-        $this->Next = $next;
-    }
-    public function __set($name, $value)
-    {
-        if (isset($this->$name)) {
-            $this->$name = $value;
-        }
-    }
-
-    public function __get($name)
-    {
-        if (isset($this->$name)) {
-            return $this->$name;
-        } else {
-            return NULL;
-        }
     }
 }
