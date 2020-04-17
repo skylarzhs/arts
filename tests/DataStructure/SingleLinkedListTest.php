@@ -180,11 +180,30 @@ class SingleLinkedListTest extends TestCase
      */
     public function testDelete()
     {
+        $this->linkedlist->insert('CC');
+        $this->linkedlist->insert('DD');
+        $this->linkedlist->insert('EE');
+        $this->linkedlist->insert('FF');
+        $this->linkedlist->insert('GG');
+        //middle node
+        $this->assertEquals(true, $this->linkedlist->delete(2));
+        $this->assertEquals(4, $this->linkedlist->getLen());
+        $this->assertEquals('GG', $this->linkedlist->get(0));
+        $this->assertEquals('FF', $this->linkedlist->get(1));
+        $this->assertEquals('DD', $this->linkedlist->get(2));
+    }
+
+
+    public function testDeleteOneNode()
+    {
         // one node
         $this->linkedlist->insert('A');
         $this->assertEquals(true, $this->linkedlist->delete(0));
         $this->assertEquals(0, $this->linkedlist->getLen());
+    }
 
+    public function testDeleteFirst()
+    {
         //three node
         $this->linkedlist->insert('A');
         $this->linkedlist->insert('B');
@@ -194,23 +213,20 @@ class SingleLinkedListTest extends TestCase
         $this->assertEquals(true, $this->linkedlist->delete(0));
         $this->assertEquals(2, $this->linkedlist->getLen());
         $this->assertEquals('B', $this->linkedlist->get(0));
+    }
 
-        $this->linkedlist->insert('CC');
-        //middle node
-        $this->assertEquals(true, $this->linkedlist->delete(1));
-        $this->assertEquals(3, $this->linkedlist->getLen());
-        $this->assertEquals('CC', $this->linkedlist->get(0));
-        $this->assertEquals('A', $this->linkedlist->get(1));
-
+    public function testDeleteLast()
+    {
         //last node
         $this->linkedlist->insert('LL');
         $this->linkedlist->insert('MM');
         $this->linkedlist->insert('NN');
         $this->linkedlist->insert('HH');
         $this->linkedlist->insert('II');
-        $this->assertEquals(true, $this->linkedlist->delete(6));
-        $this->assertEquals(6, $this->linkedlist->getLen());
-        $this->assertEquals('A', $this->linkedlist->get(5));
+        $this->assertEquals(true, $this->linkedlist->delete(4));
+        $this->assertEquals(4, $this->linkedlist->getLen());
+        $this->assertEquals('MM', $this->linkedlist->get(3));
+        $this->assertEquals('II', $this->linkedlist->get(0));
     }
 
     /**

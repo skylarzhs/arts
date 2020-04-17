@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2020-04-16 22:33:47</timestamp>
+  <timestamp>2020-04-17 13:11:36</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>11</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>36.07</totalCrap>
+    <totalCrap>36</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -105,9 +105,9 @@
       <methodName>delete</methodName>
       <methodSignature>delete(int $index)</methodSignature>
       <fullMethod>delete(int $index)</fullMethod>
-      <crap>7.07</crap>
+      <crap>7</crap>
       <complexity>7</complexity>
-      <coverage>88.89</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

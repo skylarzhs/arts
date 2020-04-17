@@ -1,12 +1,12 @@
 
 
-Code Coverage Report:    
-  2020-04-16 22:34:01    
-                         
- Summary:                
-  Classes:  0.00% (0/1)  
-  Methods: 90.91% (10/11)
-  Lines:   97.47% (77/79)
+Code Coverage Report:     
+  2020-04-17 13:11:24     
+                          
+ Summary:                 
+  Classes: 100.00% (1/1)  
+  Methods: 100.00% (11/11)
+  Lines:   100.00% (79/79)
 
 \DataStructure\LinkedList::DataStructure\LinkedList\SingleLinkedList
-  Methods:  90.91% (10/11)   Lines:  97.47% ( 77/ 79)
+  Methods: 100.00% (11/11)   Lines: 100.00% ( 79/ 79)

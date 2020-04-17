@@ -2,13 +2,13 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="SingleLinkedList.php" path="\">
     <totals>
-      <lines total="201" comments="40" code="161" executable="79" executed="77" percent="97.47"/>
-      <methods count="11" tested="10" percent="90.91"/>
+      <lines total="201" comments="40" code="161" executable="79" executed="79" percent="100.00"/>
+      <methods count="11" tested="11" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
-      <classes count="1" tested="0" percent="0.00"/>
+      <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="DataStructure\LinkedList\SingleLinkedList" start="12" executable="79" executed="77" crap="36">
+    <class name="DataStructure\LinkedList\SingleLinkedList" start="12" executable="79" executed="79" crap="36">
       <package full="" name="" sub="" category=""/>
       <namespace name="DataStructure\LinkedList"/>
       <method name="__construct" signature="__construct()" start="20" end="23" crap="1" executable="2" executed="2" coverage="100"/>
@@ -19,7 +19,7 @@
       <method name="set" signature="set(int $index, $val)" start="58" end="76" crap="5" executable="11" executed="11" coverage="100"/>
       <method name="get" signature="get(int $index)" start="83" end="99" crap="5" executable="10" executed="10" coverage="100"/>
       <method name="insert" signature="insert($val, int $index = 0)" start="107" end="131" crap="6" executable="15" executed="15" coverage="100"/>
-      <method name="delete" signature="delete(int $index)" start="137" end="166" crap="7.07" executable="18" executed="16" coverage="88.888888888889"/>
+      <method name="delete" signature="delete(int $index)" start="137" end="166" crap="7" executable="18" executed="18" coverage="100"/>
       <method name="getNode" signature="getNode(int $index = 0)" start="171" end="183" crap="5" executable="8" executed="8" coverage="100"/>
       <method name="reverse" signature="reverse()" start="188" end="200" crap="3" executable="8" executed="8" coverage="100"/>
     </class>
@@ -38,6 +38,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
@@ -55,6 +58,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
@@ -64,6 +70,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="31">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -71,6 +80,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="38">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -79,6 +91,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="43">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testEmpty"/>
@@ -91,6 +106,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
       <line nr="48">
@@ -107,6 +125,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
@@ -124,6 +145,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
@@ -141,6 +165,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
@@ -188,6 +215,8 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="86">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNagativeError"/>
@@ -199,6 +228,8 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="90">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetExceedError"/>
@@ -209,6 +240,8 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="93">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -216,6 +249,8 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="94">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -223,18 +258,24 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="95">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testReverse"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="96">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testReverse"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="98">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -242,6 +283,8 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="109">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -250,6 +293,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="110">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsertException"/>
@@ -260,6 +306,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="114">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -267,6 +316,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="116">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -274,6 +326,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="117">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -281,6 +336,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="118">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -288,6 +346,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="119">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -295,6 +356,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="120">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -302,6 +366,9 @@
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testSet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGet"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="123">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testInsert"/>
@@ -323,6 +390,9 @@
       </line>
       <line nr="139">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteNagativeError"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
@@ -331,6 +401,9 @@
       </line>
       <line nr="143">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteExceedError"/>
       </line>
       <line nr="144">
@@ -338,39 +411,61 @@
       </line>
       <line nr="147">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="148">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="149">
-        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
       </line>
       <line nr="150">
-        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
       </line>
       <line nr="152">
-        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
       </line>
       <line nr="154">
-        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
       </line>
       <line nr="155">
-        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteOneNode"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteFirst"/>
       </line>
       <line nr="158">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="159">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
+      </line>
+      <line nr="160">
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
+      </line>
+      <line nr="161">
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="163">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="164">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="165">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testDelete"/>
+        <covered by="Tests\DataStrcture\SingleLinkedListTest::testDeleteLast"/>
       </line>
       <line nr="173">
         <covered by="Tests\DataStrcture\SingleLinkedListTest::testGetNode"/>
